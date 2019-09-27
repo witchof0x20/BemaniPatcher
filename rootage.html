@@ -12,107 +12,102 @@
       window.addEventListener('load', function () {
         new DllPatcherContainer([
           new DllPatcher('bm2dx', [
-//            {
-//              // ported by UngluedBike
-//              name: 'Unlock All Songs',
-//              patches: [{offset: 0x16C372, off: [0x74, 0x10], on: [0x90, 0x90]}]
-//            },
-//            {
-//              // new 2 byte version discovered by dogelition_man
-//              name: 'Unlock All 12s',
-//              patches: [{offset: 0x16C220, off: [0x83, 0xFF], on: [0xEB, 0x5F]}]
-//            },
-//            {
-//              // ported by UngluedBike
-//              name: 'Skip CAMERA DEVICE ERROR prompt',
-//              patches: [{offset: 0x36BB0B, off: [0x84], on: [0x81]}]
-//            },
-//            {
-//              // ported by dogelition_man
-//              name: '1P Premium Free',
-//              patches: [{offset: 0x32CFC7, off: [0x75], on: [0xEB]}]
-//            },
-//            {
-//              // ported by a dogelition_man
-//              name: '2P Premium Free',
-//              patches: [
-//                {offset: 0x32D165, off: [0x74, 0x55], on: [0x90, 0x90]},
-//                {offset: 0x32D17B, off: [0x74, 0x3F], on: [0x90, 0x90]}
-//              ]
-//            },
-//			{
-//              // discovered on accident by dogelition_man
-//              name: 'Offline Arena Mode',
-//              patches: [{offset: 0x32D191, off: [0xE8, 0x6A, 0x5B, 0xE3], on: [0xE9, 0x3F, 0xFF, 0xFF]}]
-//            },
             {
-              // ported by UngluedBike
+              // offset adjusted by witchof0x20
+              name: 'Unlock All Songs',
+              patches: [{offset: 0x16D7B2, off: [0x74, 0x10], on: [0x90, 0x90]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Unlock All 12s',
+              patches: [{offset: 0x16D660, off: [0x83, 0xFF], on: [0xEB, 0x5F]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Skip CAMERA DEVICE ERROR prompt',
+              patches: [{offset: 0x36F37B, off: [0x84], on: [0x81]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: '1P Premium Free',
+              patches: [{offset: 0x32F5C7, off: [0x75], on: [0xEB]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: '2P Premium Free',
+              patches: [
+                {offset: 0x32F765, off: [0x74, 0x55], on: [0x90, 0x90]},
+                {offset: 0x32F77B, off: [0x74, 0x3F], on: [0x90, 0x90]}
+              ]
+            },
+            {
+              // offset adjusted by witchof0x20
               name: 'Premium Free Timer Freeze',
               patches: [{offset: 0x16FCAD, off: [0xFF, 0xC8], on: [0x90, 0x90]}]
             },
-//            {
-//              // ported by UngluedBike
-//              name: 'Standard/Menu Timer Freeze',
-//              patches: [{offset: 0x384097, off: [0x74], on: [0xEB]}]
-//            },
-//            {
-//              // ported by UngluedBike
-//              name: '90sec Music Select Timer',
-//              tooltip : "Make sure your Select Time option is set to \"45 SEC\" in the Game Options for this to work!",
-//              patches: [{offset: 0xFD205, off: [0x2D], on: [0x5A]}]
-//            },
-//            {
-//              // ported by UngluedBike
-//              name: 'Cursor lock',
-//              tooltip : "After song finishes, song select remains on previous song",
-//              patches: [{offset: 0x332314, off: [0x74, 0x1D], on: [0x90, 0x90]}]
-//            },
-//            {
-//              // ported by UngluedBike
-//              name: 'CS-Style Song Start Delay',
-//              tooltip : "Holding Start will pause the song at the beginning until you release it",
-//              patches: [{offset: 0x35021A, off: [0x7D, 0x25], on: [0x90, 0x90]}]
-//            },
-//            {
-//              // ported by dogelition_man
-//              name: 'Play video preview on all songs',
-//              tooltip : "By default, only some songs in the beginner folder show a BGA preview on the music select screen. This edit extends this function to every song in any folder.",
-//              patches: [
-//                {offset: 0x11F21E, off: [0x74, 0x0E], on: [0x90, 0x90]},
-//                {offset: 0x11BE6C, off: [0x0F, 0xB6], on: [0xEB, 0x2F]}
-//              ]
-//            },
-//            {
-//			  // ported by UngluedBike
-//              name: 'Hide INSERT COIN[S] text',
-//              patches: [{offset : 0x106859, off: [0x9B], on: [0x9A]}]
-//            },
-//            {
-//			  // ported by UngluedBike
-//              name: 'Hide CREDIT: %d text',
-//              patches: [{offset: 0x1063E7, off: [0x5D], on: [0x5C]}]
-//            },
-//            {
-//			  // ported by UngluedBike
-//              name: 'Hide CREDIT: %d COIN %d / %d text',
-//              patches: [{offset: 0x1063BD, off: [0x67], on: [0x66]}],
-//            },
-//            {
-//			  // ported by UngluedBike
-//              name: 'Hide EXTRA PASELI: %d text',
-//              patches: [{offset: 0x1066A8, off: [0xF4], on: [0xF3]}]
-//            },
-//            {
-//			  // ported by UngluedBike
-//              name: 'Hide PASELI: NO ACCOUNT text',
-//              patches: [{offset: 0x106762, off: [0x7A], on: [0x79]}]
-//            },
-//            {
-//			  // ported by UngluedBike
-//              name: 'Hide PASELI: ****** text',
-//              patches: [{offset: 0x1066CB, off: [0xF1], on: [0xF0]}]
-//            },
-//			
+            {
+              // offset adjusted by witchof0x20
+              name: 'Standard/Menu Timer Freeze',
+              patches: [{offset: 0x387EB7, off: [0x74], on: [0xEB]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: '90sec Music Select Timer',
+              tooltip : "Make sure your Select Time option is set to \"45 SEC\" in the Game Options for this to work!",
+              patches: [{offset: 0xFD9B5, off: [0x2D], on: [0x5A]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Cursor lock',
+              tooltip : "After song finishes, song select remains on previous song",
+              patches: [{offset: 0x334914, off: [0x74, 0x1D], on: [0x90, 0x90]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'CS-Style Song Start Delay',
+              tooltip : "Holding Start will pause the song at the beginning until you release it",
+              patches: [{offset: 0x35396A, off: [0x7D, 0x25], on: [0x90, 0x90]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Play video preview on all songs',
+              tooltip : "By default, only some songs in the beginner folder show a BGA preview on the music select screen. This edit extends this function to every song in any folder.",
+              patches: [
+                {offset: 0x11FDFE, off: [0x74, 0x0E], on: [0x90, 0x90]},
+                {offset: 0x11CA4C, off: [0x0F, 0xB6], on: [0xEB, 0x2F]}
+              ]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Hide INSERT COIN[S] text',
+              patches: [{offset : 0x107279, off: [0x3B], on: [0x3A]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Hide CREDIT: %d text',
+              patches: [{offset: 0x106DF8, off: [0x0C], on: [0x0B]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Hide CREDIT: %d COIN %d / %d text',
+              patches: [{offset: 0x106DCD, off: [0x17], on: [0x16]}],
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Hide EXTRA PASELI: %d text',
+              patches: [{offset: 0x106EE9, off: [0x43], on: [0x42]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Hide PASELI: NO ACCOUNT text',
+              patches: [{offset: 0x10717B, off: [0x21], on: [0x20]}]
+            },
+            {
+              // offset adjusted by witchof0x20
+              name: 'Hide PASELI: ****** text',
+              patches: [{offset: 0x1070DD, off: [0x9F], on: [0x9E]}]
+            },
+			
           ], "2019-09-02"),
           new DllPatcher('bm2dx', [
             {
